@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grocery Price Comparison</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+ 
+</head>
+<body>
+    <h1>🛒 Grocery Price Analyzer</h1>
+
+    <label for="product">Product:</label>
+    <input type="text" id="product" placeholder="e.g. Rice"><br><br>
+
+    <label for="area">Area:</label>
+    <input type="text" id="area" placeholder="e.g. T Nagar"><br><br>
+
+    <button onclick="fetchPrices()">Compare Prices</button>
+
+    <div id="results"></div>
+
+    <script src="/static/script.js"></script>
+    
+</body>
+</html>

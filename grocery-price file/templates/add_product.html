@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add New Product</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+    <h2>Add New Product</h2>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flash-messages">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('add_product') }}" method="post">
+        <label>Product Name:</label>
+        <input type="text" name="product_name" required /><br /><br />
+
+        <label>Area:</label>
+        <input type="text" name="area" required /><br /><br />
+
+        <label>Store Name:</label>
+        <input type="text" name="store_name" required /><br /><br />
+
+        <label>Price (₹):</label>
+        <input type="text" name="price" required /><br /><br />
+
+        <button type="submit">Add Product</button>
+    </form>
+
+    <br />
+    <a href="{{ url_for('home') }}">Go back to Home</a>
+</body>
+</html>
